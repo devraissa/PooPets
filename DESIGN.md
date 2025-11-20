@@ -32,7 +32,7 @@ Todos os atributos devem ser Encapsulados (usando self.__atributo) e manipulados
     
     2.2. Efeito dos Métodos de Ação
         alimentar ->  Saciedade += 20, Higiene -= 5, Felicidade += 5, Saúde += 20, Descanso -= 5
-        dar_banho ->  Higiene += 70, Felicidade += 10, Saúde += 20, Descanso -= 5
+        dar_banho ->  Higiene += 70, Felicidade += 10, Saúde += 20, Descanso -= 5, Saciedade -= 5
         brincar   ->  Saciedade -= 20, Higiene -= 20, Felicidade += 40, Saúde += 30, Descanso -= 20
         carinho -> Felicidade += 10
         dormir    ->  Saciedade -= 10, Felicidade += 10, Saúde += 30, Descanso += 100 (reseta)
