@@ -1,17 +1,17 @@
 from models.pet import Pet
 
 class Bird(Pet):
-    def __init__(self, name, satiety=50, health=100, hygiene=50, happiness=50, rest=100):
-        super().__init__(name, satiety, health, hygiene, happiness, rest)
+    def __init__(self, satiety, health, hygiene, happiness, rest, sleep_cycles, name="Bichinho"):
+        super().__init__(satiety, health, hygiene, happiness, rest, sleep_cycles, name)
 
-    def pet_plays(self):
-        self.set_happiness(70)
-        self.set_rest(-40)
-        return super().pet_plays()
+    def plays(self):
+        self.set_happiness(value=70)
+        self.set_rest(value=(-40))
+        return super().plays()
     
-    def pet_sleeps(self):
-        self.set_satiety(-12)
-        return super().pet_sleeps()
+    def sleeps(self):
+        self.set_satiety(value=(-12))
+        return super().sleeps()
     
-    def pet_makes_sound(self):
+    def makes_sound(self):
         return "Piu! Piu!🐦🎶"
