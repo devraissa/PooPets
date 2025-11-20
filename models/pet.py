@@ -23,6 +23,10 @@ class Pet:
         return self.__satiety
     
     @property
+    def get_sleep_cycles(self):
+        return self.__sleep_cycles
+    
+    @property
     def get_health(self):
         return self.__health
     
@@ -39,6 +43,9 @@ class Pet:
         return self.__rest
 
     # == MANIPULA OS VALORES DOS ATRIBUTOS | SETTERS ==
+    def set_name(self, name):
+        self.__name = name
+
     def set_satiety(self, value):
         self.__satiety = self.__clamper_value(self.__satiety + value)
     
@@ -56,6 +63,10 @@ class Pet:
 
     # == AÇÕES DO PET ==
     def to_feed(self):
+        self.set_hygiene(value=(-5))
+        self.set_happiness(value=5)
+        self.set_health(value=20)
+        self.set_rest(value=(-5))
         return f"\nA barriguinha de {self.__name} está fazendo ron-ron! 🍼 Que delícia de rango!"
     
     def plays(self):
@@ -85,6 +96,3 @@ class Pet:
         self.set_rest(value=100)
         
         return f"\nShhh... {self.__name} dormirá por {self.__sleep_cycles} horas. 😴 Ele voltará assim que as baterias estiverem cheias!"
-
-    def makes_sound(self):
-        pass

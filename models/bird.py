@@ -3,6 +3,10 @@ from models.pet import Pet
 class Bird(Pet):
     def __init__(self, satiety, health, hygiene, happiness, rest, sleep_cycles, name="Bichinho"):
         super().__init__(satiety, health, hygiene, happiness, rest, sleep_cycles, name)
+    
+    def to_feed(self):
+        self.set_satiety(value=15)
+        return super().to_feed()
 
     def plays(self):
         self.set_happiness(value=70)
@@ -12,6 +16,3 @@ class Bird(Pet):
     def sleeps(self):
         self.set_satiety(value=(-12))
         return super().sleeps()
-    
-    def makes_sound(self):
-        return "Piu! Piu!🐦🎶"

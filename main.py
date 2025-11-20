@@ -1,4 +1,3 @@
-from view.view import View
+from controller.game_logic import Game
 
-view = View()
-print(view.tombstone())
+Game.pet_adoption_stage()
