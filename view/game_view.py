@@ -1,10 +1,15 @@
 from datetime import date
 
+# Obtém a data atual no formato DD/MM/AAAA
 date = date.today().strftime('%d/%m/%Y')
 
 class GameView:
+    """ Classe responsável por todas as visualizações do jogo no terminal (CLI). Todos os métodos são estáticos e retornam strings formatadas (ASCII Art ou f-strings). """
+    
     @staticmethod
     def menu():
+        """ Exibe o menu principal de adoção. """
+
         return """\n+---------------------------------------------------+
 |                 🦴 ** POOPETS ** 🦴               |
 |        Onde seu novo melhor amigo te espera!      |
@@ -23,6 +28,7 @@ class GameView:
 
     @staticmethod
     def leaving_the_game():
+        """ Mensagem de despedida e alerta de não-salvamento. """
         return f"""╔═════════════════════════════════════════════════════════════╗
 ║                                                             ║
 ║                  💖 ATÉ LOGO, CUIDADOR(A)! 💖               ║
@@ -38,6 +44,8 @@ class GameView:
 
     @staticmethod
     def care_instructions(pet):
+        """ Mensagem de boas-vindas ao loop principal, focando nas regras de cuidado. """
+
         return f"""\n╔═════════════════════════════════════════════════════════════╗
 ║                                                             ║
 ║     🐾 SUA AVENTURA COMO GUARDIÃO(Ã) COMEÇA AGORA! 🐾       ║
@@ -56,6 +64,8 @@ class GameView:
 
     @staticmethod
     def adoption_contract():
+        """ Exibe o termo de responsabilidade e pede a nomeação do Pet. """
+
         return f"""\n+---------------------------------------------------+
 |               📝 CONTRATO DE ADOÇÃO 📝            |
 |         VOCÊ ACEITA SER O HUMANO DESTE PET?       |
@@ -80,6 +90,8 @@ class GameView:
     
     @staticmethod
     def pet_status(pet):
+        """ Exibe o painel de status do Pet e o menu de ações de cuidado. Requer o objeto 'pet' para acessar seus atributos. """
+
         return f"""\n╔════════════════════════════════════════════╗
 ║      ✨ MEU COMPANHEIRO: {pet.get_name:5} ✨          ║
 ╠════════════════════════════════════════════╣
@@ -100,6 +112,8 @@ class GameView:
     
     @staticmethod
     def tombstone():
+        """ Exibe a tela final de Game Over. """
+
         return f"""+-------------------------------------------------------------+
 |                                                             |
 |                   😭  FIM DE JOGO  😭                       |
